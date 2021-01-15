@@ -27,7 +27,7 @@
   <body>
     <script type="text/javascript">
     append('body', `
-            Hola mundo
+            Hola mundo y Chao
 
 
     `);
