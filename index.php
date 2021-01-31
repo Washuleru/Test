@@ -8,8 +8,11 @@
     <script>
     <?php
 
-    echo file_get_contents('c:/dd/deploy_area/client/vanilla.js');
-    echo file_get_contents('c:/dd/deploy_area/client/util.js');
+    // $path = 'c:/dd/deploy_area/client';
+    $path = 'c:/xampp/htdocs/client';
+
+    echo file_get_contents($path.'/vanilla.js');
+    echo file_get_contents($path.'/util.js');
 
      ?>
      </script>
@@ -18,9 +21,40 @@
      <style>
      <?php
 
-     echo file_get_contents('c:/dd/deploy_area/client/style/estandar.css');
+     echo file_get_contents($path.'/style/estandar.css');
 
       ?>
+     </style>
+
+     <style>
+
+     .input-txt {
+
+       width: 250px;
+       height: 40px;
+       text-align: center;
+       background: #dce357;
+       color: black;
+
+     }
+
+     .button-send {
+
+       background: #d59507;
+       width: 200px;
+       text-align: center;
+       cursor: pointer;
+
+     }
+
+     .button-send:hover {
+
+       background: #7a5709;
+
+     }
+
+
+
      </style>
 
   </head>
@@ -31,28 +65,46 @@
       console.log('home init');
 
 
-      let w_column = 31;
+      let w_column = 33.3;
 
       append('body', `
 
 
       <div class='fl' style='width: 90%; margin: auto;'>
 
-        <div class='in fll c1' style='width: `+w_column+`%; padding: 10px; background: blue; font-size: 20px; color: white;'>
+        <div class='in fll c1' style='width: `+w_column+`%; background: blue; font-size: 20px; color: white;'>
 
           A
 
         </div>
 
-        <div class='in fll c2' style='width: `+w_column+`%; padding: 10px; background: red; font-size: 20px; color: white;'>
+        <div class='in fll c2' style='width: `+w_column+`%; background: red; font-size: 20px; color: white;'>
 
          B
 
         </div>
 
-        <div class='in fll c3' style='width: `+w_column+`%; padding: 10px; background: green; font-size: 20px; color: white;'>
+        <div class='in fll c3' style='width: `+w_column+`%; background: green; font-size: 20px; color: white;'>
 
-         C
+         <input
+           type='text'
+           class='in input-txt'
+           spellcheck='false'
+           autocomplete='new-password'
+           placeholder=' ingrese texto'
+           value=''
+          />
+
+          <div class='inl'>
+
+            <div class='in button-send' style='padding: 30px;'>
+
+              ENVIAR
+
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -119,6 +171,20 @@
       setInterval(function(e){
         rr();
       }, 100);
+
+
+      s('.button-send').onclick = function(){
+
+
+        htmls('.c1', `
+
+          `+s('.input-txt').value+`
+
+        `);
+
+        s('.input-txt').value = '';
+
+      };
 
 
 
