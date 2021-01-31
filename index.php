@@ -8,8 +8,8 @@
     <script>
     <?php
 
-    echo file_get_contents('c:/xampp/htdocs/client/vanilla.js');
-    echo file_get_contents('c:/xampp/htdocs/client/util.js');
+    echo file_get_contents('c:/dd/deploy_area/client/vanilla.js');
+    echo file_get_contents('c:/dd/deploy_area/client/util.js');
 
      ?>
      </script>
@@ -18,7 +18,7 @@
      <style>
      <?php
 
-     echo file_get_contents('c:/xampp/htdocs/client/style/estandar.css');
+     echo file_get_contents('c:/dd/deploy_area/client/style/estandar.css');
 
       ?>
      </style>
