@@ -31,7 +31,6 @@
      .input-txt {
 
        width: 80%;
-       height: 40px;
        font-size: 14px;
        background: white;
        color: black;
@@ -85,7 +84,8 @@
         min-width: 80%;
         font-family: arial;
         padding: 5px;
-        font-size: 12px;
+        font-size: 14px;
+        margin: auto;
 
       }
 
@@ -133,7 +133,7 @@
 
            <br>
 
-           <textarea class='in txt-msj'  placeholder=' Ingrese Una Nota' style='margin: auto; width: 80%;'></textarea>
+           <textarea class='in txt-msj' placeholder=' Ingrese Una Nota'></textarea>
 
            <br>
 
