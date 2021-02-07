@@ -8,8 +8,8 @@
     <script>
     <?php
 
-    // $path = 'c:/dd/deploy_area/client';
-    $path = 'c:/xampp/htdocs/client';
+    $path = 'c:/dd/deploy_area/client';
+    // $path = 'c:/xampp/htdocs/client';
 
     echo file_get_contents($path.'/vanilla.js');
     echo file_get_contents($path.'/util.js');
@@ -21,7 +21,7 @@
      <style>
      <?php
 
-     echo file_get_contents($path.'/style/estandar.css');
+     echo file_get_contents($path.'/style/underpost.css');
 
       ?>
      </style>
@@ -30,13 +30,22 @@
 
      .input-txt {
 
-       width: 250px;
+       width: 80%;
        height: 40px;
-       text-align: center;
-       background: #dce357;
+       font-size: 14px;
+       background: white;
        color: black;
+       margin: auto;
+       padding: 5px;
 
      }
+
+     ::selection {
+
+        color: black;
+        background: #dfbb5f;
+
+      }
 
      .button-send {
 
@@ -44,6 +53,8 @@
        width: 200px;
        text-align: center;
        cursor: pointer;
+       margin: auto;
+       padding: 10px;
 
      }
 
@@ -53,7 +64,30 @@
 
      }
 
+     .c-global {
 
+       background: #e3cb2c;
+       min-height: 400px;
+
+     }
+
+     ::placeholder {
+
+        color: black;
+        opacity: 1; /* Firefox */
+
+      }
+
+      .txt-msj {
+
+        height: 200px;
+        max-width: 80%;
+        min-width: 80%;
+        font-family: arial;
+        padding: 5px;
+        font-size: 12px;
+
+      }
 
      </style>
 
@@ -64,51 +98,70 @@
 
       console.log('home init');
 
+      s('body').style.overflowY = 'auto';
 
       let w_column = 33.3;
 
       append('body', `
 
+      <br>
+
+      <br>
+
+      <div class='in' style='text-align: center; font-weight: bold; font-size: 16px;'>
+
+          GESTOR DE NOTAS v1.0
+
+      </div>
+
+      <br>
 
       <div class='fl' style='width: 90%; margin: auto;'>
 
-        <div class='in fll c1' style='width: `+w_column+`%; background: blue; font-size: 20px; color: white;'>
+        <div class='in fll c1 c-global' style='width: `+w_column+`%;'>
 
-          A
+          <br>
+
+          <input
+            type='text'
+            class='in input-txt'
+            spellcheck='false'
+            autocomplete='new-password'
+            placeholder=' Ingrese Titulo'
+            value=''
+           />
+
+           <br>
+
+           <textarea class='in txt-msj'  placeholder=' Ingrese Una Nota' style='margin: auto; width: 80%;'></textarea>
+
+           <br>
+
+           <div class='in button-send'>
+
+             ENVIAR
+
+           </div>
 
         </div>
 
-        <div class='in fll c2' style='width: `+w_column+`%; background: red; font-size: 20px; color: white;'>
+        <div class='in fll c2 c-global' style='width: `+w_column+`%;'>
 
-         B
+
 
         </div>
 
-        <div class='in fll c3' style='width: `+w_column+`%; background: green; font-size: 20px; color: white;'>
-
-         <input
-           type='text'
-           class='in input-txt'
-           spellcheck='false'
-           autocomplete='new-password'
-           placeholder=' ingrese texto'
-           value=''
-          />
-
-          <div class='inl'>
-
-            <div class='in button-send' style='padding: 30px;'>
-
-              ENVIAR
+        <div class='in fll c3 c-global' style='width: `+w_column+`%;'>
 
 
-            </div>
-
-          </div>
 
         </div>
 
       </div>
+
+      <br>
+
+      <br>
 
       `);
 
@@ -176,11 +229,6 @@
       s('.button-send').onclick = function(){
 
 
-        htmls('.c1', `
-
-          `+s('.input-txt').value+`
-
-        `);
 
         s('.input-txt').value = '';
 
