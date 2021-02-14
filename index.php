@@ -2,9 +2,11 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>pablo - underpost.net</title>
     <meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
     <meta name='viewport' content='width=device-width, user-scalable=no' />
+    <link rel='icon' href='/cloud/e_learning/pablo/favicon.ico' type='image/x-icon' />
+    <!-- <link rel='icon' href='/app/favicon.ico' type='image/x-icon' /> -->
     <script>
     <?php
 
@@ -156,6 +158,16 @@
 
 
         </div>
+
+      </div>
+
+      <br>
+
+      <br>
+
+      <div class='in' style='text-align: center;'>
+
+        <a style='color: white; text-decoration: none;' href='https://underpost.net'>Powered By <b>UNDER</b>post.net</a>
 
       </div>
 
